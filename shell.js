@@ -33,7 +33,8 @@ COLOR       Sets the default console foreground & background colors.
 ECHO        Prints the specified text to the console.
 GET         Makes a GET request to the specified URL. (note: CORS is a thing)
 HELP        Displays this help message.
-UHOH        Uh oh!`)
+UHOH        Uh oh!`);
+                break;
             case 'uhoh':
                 location.replace("/uhoh.html");
                 break;
