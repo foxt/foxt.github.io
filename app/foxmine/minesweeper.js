@@ -114,6 +114,7 @@ function openBlock(x,y, ignoreMines) {
 var canvas = document.getElementById('minefield-canvas');
 var ctx = canvas.getContext('2d');
 var spritesheet = document.querySelector('#spritesheet');
+spritesheet.onload = () => renderMinefield();
 console.log(canvas,ctx)
 
 var fox = document.querySelector('.fox');
