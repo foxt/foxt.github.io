@@ -22,6 +22,9 @@ class ShellConsole extends Console {
             case 'echo':
                 this.writeHistory(args.join(' '));
                 break;
+            case 'foxmine':
+                document.getElementById('foxsweeper').style.display = 'flex';
+                break;
             case 'get':
                 getCommand(this, args);
                 break;
@@ -31,6 +34,7 @@ class ShellConsole extends Console {
 CLEAR       Clears the console.
 COLOR       Sets the default console foreground & background colors.
 ECHO        Prints the specified text to the console.
+FOXMINE     Starts a new game of minesweeper.
 GET         Makes a GET request to the specified URL. (note: CORS is a thing)
 HELP        Displays this help message.
 UHOH        Uh oh!`);
@@ -46,4 +50,4 @@ UHOH        Uh oh!`);
         }
     }
 }
-window.shellconsole = new ShellConsole( document.getElementById('windowContentContainer') );
+window.shellconsole = new ShellConsole( document.getElementById('terminal') );

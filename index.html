@@ -12,16 +12,14 @@
 <body>
     <div id="pageContainer">
         <div id="background"></div>
-        <div id="windowContainer">
+        <div id="mainWindow" class="window">
             <div id="windowTitlebar">
                 <div id="windowTitle">
                     <p id="windowTitleText">/bin/sh</p>
                 </div>
-                <div id="windowControls">
-                </div>
             </div>
             <div id="windowContent">
-                <div id="windowContentContainer">
+                <div id="terminal">
                     <div id="history">
                         <div id="banner">
                             <img src="img/logo.svg">
@@ -42,6 +40,20 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div id="foxsweeper" class="window" style="display: none;">
+            <div id="windowTitlebar">
+                <div id="windowTitle">
+                    <p id="windowTitleText">Foxsweeper</p>
+                </div>
+                <div id="windowControls">
+                    <button class="windowControl" id="closeButton" onclick="document.getElementById('foxsweeper').style.display = 'none'">
+                        x
+                    </button>
+                </div>
+            </div>
+            <iframe width="162" height="205" src="./app/foxmine/" id="windowContent">
+            </iframe>
         </div>
         <div id="footer">
             &copy; 2022 foxtdev | <a target="_blank" href="https://unsplash.com/photos/SPvJPDXEmqA">image credit</a>

@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+}
+
+#minesweeper {
+  /** prevent padding due to whitespace in html */
+  font-size: 0;
+  image-rendering: pixelated;
+  background: #b8b8b8;
+  padding: 6px;
+  width: fit-content;
+}
+#minesweeper #status {
+  border: 1px solid white;
+  border-top-color: #757575;
+  border-left-color: #757575;
+  display: flex;
+  justify-content: space-between;
+  border-width: 2px;
+  padding: 4px;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+}
+#minesweeper #status .stat-display {
+  border: 1px solid white;
+  border-top-color: #757575;
+  border-left-color: #757575;
+  width: 39px;
+  height: 23px;
+}
+#minesweeper #status .stat-display .stat-value {
+  display: inline-block;
+  height: 23px;
+  width: 13px;
+  background-image: url("img/digit.png");
+}
+#minesweeper #status .stat-display .stat-value-0 {
+  background-position: -13px 0;
+}
+#minesweeper #status .stat-display .stat-value-1 {
+  background-position: -26px 0;
+}
+#minesweeper #status .stat-display .stat-value-2 {
+  background-position: -39px 0;
+}
+#minesweeper #status .stat-display .stat-value-3 {
+  background-position: -52px 0;
+}
+#minesweeper #status .stat-display .stat-value-4 {
+  background-position: -65px 0;
+}
+#minesweeper #status .stat-display .stat-value-5 {
+  background-position: -78px 0;
+}
+#minesweeper #status .stat-display .stat-value-6 {
+  background-position: -91px 0;
+}
+#minesweeper #status .stat-display .stat-value-7 {
+  background-position: -104px 0;
+}
+#minesweeper #status .stat-display .stat-value-8 {
+  background-position: -117px 0;
+}
+#minesweeper #status .stat-display .stat-value-9 {
+  background-position: -130px 0;
+}
+#minesweeper #status #face {
+  width: 26px;
+  height: 26px;
+  background-image: url("img/button.png");
+  background-position: -26px 0;
+}
+#minesweeper #status #face .fox {
+  background-image: url("img/foxes.png");
+  width: 17px;
+  height: 17px;
+  margin: 4px;
+}
+#minesweeper #status #face .face-shock {
+  background-position: -17px 0;
+}
+#minesweeper #status #face .face-dead {
+  background-position: -34px 0;
+}
+#minesweeper #status #face .face-cool {
+  background-position: -51px 0;
+}
+#minesweeper #status #face:active {
+  background-position: 0 0;
+}
+#minesweeper #status #face:active .fox {
+  margin: 5px;
+}
+#minesweeper #minefield {
+  border: 1px solid white;
+  border-top-color: #757575;
+  border-left-color: #757575;
+  border-width: 3px;
+  flex-shrink: 0;
+  background-image: url("img/square.png");
+  background-repeat: repeat;
+}
+
+/*# sourceMappingURL=index.css.map */
