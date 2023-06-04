@@ -14,7 +14,7 @@ export class Console {
             if (event.keyCode == 13) {
                 this.writeHistory(this.prompt.innerText + " " + this.input.value);
                 try {
-                    this.runCommand(this.input.value);
+                    this.runCommand(this.input.value.toLowerCase());
                 } catch(e) {
                     this.writeHistory(e.toString());
                     this.showInput();
