@@ -1,0 +1,116 @@
+<style>
+    #background {
+      position:fixed;
+      width: calc(100vw + 48px);
+      height: calc(100vh + 48px);
+      left: -24px;
+      top: -24px;
+      background-image: url("https://source.unsplash.com/random/1280x720?fox");
+      background-size: cover;
+      filter: blur(6px);
+      opacity: 50%;
+    }
+    #container {
+      position:fixed;
+      width: calc(100vw - 2em);
+      height: calc(100vh - 2em);
+      left:0;
+      top:0;
+      font-family: "Helvetica", sans-serif;
+      font-size: 300%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 1em;
+    }
+    #middle {
+      flex-grow: 1;
+      flex-basis: inherit;
+    }
+    .foxt {
+      color: #E98025;
+      transform-origin: top;
+      transform: rotate(-4deg) translateY(-0.7em);
+      font-size: 150%;
+      text-shadow: 0px 0px 16px #000000,0px 0px 16px #000000,0px 0px 16px #000000;
+      text-stroke: 1px black;
+    }
+    #middle svg {
+      height: 40px;
+      position: fixed;
+      height: 50vh;
+      top: calc(25vh + 0.75em);
+      left: 0;
+      width: 100%;
+    }
+    a {
+      position: fixed;
+    color: #888;
+    text-decoration: none;
+    font-size: 200%;
+    transform: rotate(90deg) translateX(-50%);
+    transform-origin: bottom left;
+    left: calc(100vw - 1.2em);
+    top: calc(50% - 1em);
+    }
+    
+    @media only screen and (orientation: portrait) {
+      #background {
+      background-image: url("https://source.unsplash.com/random/720x1280?fox");
+    }
+    }
+    
+    body {
+      cursor: url("data:image/x-icon;base64,AAACAAEAICAAAAYAAQCoDAAAFgAAACgAAAAgAAAAQAAAAAEAGAAAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAM2YAM2YAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZpkAZswAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZswAZswAZpkAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZswAZpkAZswAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZswAZswAZswAZpkAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAM2YAM2YAAAAAAAAAM2YAZswAZswAZswAZpkAZswAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZswAZpkAM2YAAAAAM2YAZswAZswzmf8zmf8zmf8zmf8AZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZpkAZswAZpkAM2YAZswAZswzmf8zmf8zmf8zmf8zmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZswAZpkAZpkAZpkAZswAZswzmf8zmf8zmf8zmf8zmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAZswAZpkAZswAZpkAZpkAZsxmmcyZzP+ZzP+ZzP+ZzP8zmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8AZpkAZpkAZsyZzP/M///M///M//+ZzP8zmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzZpkzZpkzZpkzmf8zmf8zmf+ZzP8AZplmmczM///M///M///M///M//8zmf8AZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf+ZzP/M///M///M//8AZszM///M///M//+ZzP8zmf8AZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzZpkzZpkzZpkzmf8zmf+ZzP/M///M///M///M//8AZswAZswAZszM//8AZpkAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf+ZzP/M///M///M//8AZszM///M///M//8AZpkAZpkAZpkAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8AM2YAM2YAM2bM///M///M///M//+ZzP8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8AM2YzZpkAM2YAZpnM///M///M//+ZzP8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAM2YAM2Yzmf8zmf8AM2YAZpkzmf8AZpkAM2YAM2Yzmf8zmf+ZzP+ZzP8zmf8zmf8zZpkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2bM///M//8AM2Yzmf8zmf8AM2YAM2YAM2Yzmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8AM2YAAAAzZpkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2bM//+ZzP+ZzP8zZpkzmf8zmf8AM2YAM2Yzmf8zmf8AM2YAM2YAM2Yzmf8zmf8zmf8zZpkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf+ZzP+ZzP8zmf8zZpkzmf8zmf8zmf8zmf8zmf8zmf8AM2YAM2YAM2Yzmf8zmf8AM2YAAAAzZpkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8AZpkAZpkzmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAM2YAM2YAM2YAM2Yzmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8AM2YAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8zmf8zmf8zmf8zZpmZzP/M//8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8zmf8zmf8zZpmZzP+ZzP/M//8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8zmf8AM2Yzmf+ZzP+ZzP/M//8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8zmf8AM2YAAAAAM2Yzmf+ZzP/M//8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2Yzmf8zmf8zmf8zmf8AM2YAAAAAAAAAAAAAM2Yzmf8zmf8AM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM2YAM2YAM2YAM2YAAAAAAAAAAAAAAAAAAAAAM2YAM2YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//////////////////D////gf///wD///8A///+AP//xgD//4IA//+AAP//gAD//4AA//+AAP/+AAB//4AAf/4AAH//gAB//4AAf/+AAH/+AAB//AAAv/gAAf/wAAL/8AAH//gAB///gAP//4AD//+AA///gIP//4HD///D5//w=="),auto !important;
+    }
+    </style>
+    <div id="background"></div>
+    <div id="container">
+      <div id="toptext">
+        Uh oh! You friccin moron. You just got
+        <p class="foxt">FOXT!!!</p>
+      </div>
+      <div id="middle">
+        <!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In  -->
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 722 1006" style="overflow:visible;enable-background:new 0 0 722 1006;" xml:space="preserve">
+    <style type="text/css">
+        .st0{fill:#F47A14;}
+        .st1{fill:url(#SVGID_1_);}
+        .st2{fill:url(#SVGID_2_);}
+        .st3{fill:url(#SVGID_3_);}
+        .st4{fill:url(#SVGID_4_);}
+    </style>
+    <defs>
+    </defs>
+    <g>
+        
+            
+        <g>
+            <g>
+                <polygon class="st0" points="643.5,644.5 361.5,927.5 78.5,644.5 361.5,361.5 			"/>
+                
+                    <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-62" y1="2008" x2="221" y2="1725" gradientTransform="matrix(1 0 0 -1 0 2228)">
+                    <stop  offset="0" style="stop-color:#ED1D71"/>
+                    <stop  offset="0.95" style="stop-color:#FF4800"/>
+                    <stop  offset="1" style="stop-color:#C42A00"/>
+                </linearGradient>
+                <polyline class="st1" points="79.5,78.5 361.5,361.5 79.5,644.5 			"/>
+                
+                    <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="785" y1="2008" x2="502" y2="1725" gradientTransform="matrix(1 0 0 -1 0 2228)">
+                    <stop  offset="0" style="stop-color:#ED1D71"/>
+                    <stop  offset="0.95" style="stop-color:#FF4800"/>
+                    <stop  offset="1" style="stop-color:#C42A00"/>
+                </linearGradient>
+                <polyline class="st2" points="643.5,78.5 361.5,361.5 643.5,644.5 			"/>
+            </g>
+        </g>
+    </g>
+    </svg>
+    
+      </div>
+      <div id="bottomtext">
+        Tag your friends to totally FOX! them!
+      </div>
+    </div>
+    <a href="https://twitter.com/foxtdev" target="_blank">twitter.com/foxtdev</a>
+    

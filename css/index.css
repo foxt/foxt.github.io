@@ -1,0 +1,174 @@
+.window {
+  padding: 9px;
+  padding-top: 6px;
+  width: fit-content;
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  background-color: #0002;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px #000, 0 0 20px #000;
+  border-radius: 6.25px;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+.window #windowTitlebar {
+  margin-bottom: 8px;
+  user-select: none;
+  display: flex;
+  justify-content: space-between;
+}
+.window #windowTitlebar #windowTitle #windowTitleText {
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #fff, 0 0 20px #fff;
+}
+.window #windowTitlebar #windowControls {
+  margin-top: -10px;
+}
+.window #windowTitlebar #windowControls #closeButton {
+  border: 1px solid #eee;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-image: radial-gradient(#C76661, #B43029, #8E2D2C);
+  color: #fff;
+  width: 49px;
+  height: 17px;
+  text-shadow: #494C5A 0px 0px 2px, #494C5A 0px 0px 2px, #494C5A 0px 0px 2px;
+  line-height: 0.5;
+}
+.window #windowContent {
+  border: 1px solid #eee;
+  border-radius: 2.5px;
+  flex-grow: 1;
+  flex-basis: 1;
+}
+
+#terminal {
+  --color: #c0c0c0;
+  --background: #000;
+  width: 100%;
+  height: 100%;
+  max-width: 80ch;
+  max-height: 25em;
+  overflow: scroll;
+  overflow-x: hidden;
+  background: var(--background);
+  color: var(--color);
+  cursor: text;
+  border: 1px solid #777;
+}
+#terminal #history #banner {
+  display: flex;
+  flex-direction: row;
+}
+#terminal #history #banner img {
+  height: 2.5em;
+}
+#terminal #history #banner p {
+  margin: 0;
+}
+#terminal #history pre {
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+#terminal #inputContainer {
+  display: flex;
+  flex-direction: row;
+  height: 1.5em;
+  align-items: center;
+}
+#terminal #inputContainer #input {
+  flex-grow: 1;
+  font-size: 15px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+  background: none;
+  border: none;
+  color: var(--color);
+  outline: none;
+  margin-left: 1ch;
+}
+#terminal #inputContainer #prompt {
+  margin: 0;
+}
+
+#pageContainer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  font-size: 15px;
+  font-family: "JetBrains Mono", "Consolas", monospace;
+}
+#pageContainer #background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("../img/maria-vojtovicova-SPvJPDXEmqA-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+#pageContainer #mainWindow {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  max-width: calc(80ch + 4px);
+  /* hack to avoid having to work out how tall the title bar is */
+  max-height: calc(25em + 32px);
+}
+
+@media only screen and (max-height: 404px) {
+  #terminal {
+    height: 100vh;
+    top: 50vh;
+    transform: translate(0%, -50%);
+    position: fixed;
+  }
+
+  #windowTitlebar {
+    display: none;
+  }
+
+  #windowContent, #windowContainer {
+    border: none !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+}
+#footer {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 1em;
+  width: 100vw;
+  text-align: center;
+  color: #fff;
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  z-index: -1;
+}
+
+a {
+  color: var(--color);
+}
+
+/*# sourceMappingURL=index.css.map */

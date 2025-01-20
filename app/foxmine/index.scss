@@ -1,0 +1,78 @@
+@mixin border {
+    border: 1px solid white;
+    border-top-color: #757575;
+    border-left-color: #757575;
+}
+
+body {
+    margin: 0;
+}
+#minesweeper {
+    /** prevent padding due to whitespace in html */
+    font-size: 0;
+    
+    image-rendering: pixelated;
+    background: #b8b8b8;
+    padding: 6px;
+    width: fit-content;
+    #status {
+        @include border;
+        display: flex;
+        justify-content: space-between;
+        border-width: 2px;
+        padding: 4px;
+        padding-bottom: 3px;
+        margin-bottom: 6px;
+        .stat-display {
+            @include border;
+            width: 39px;
+            height: 23px;
+            .stat-value {
+                display: inline-block;
+                height: 23px;
+                width: 13px;
+                background-image: url("img/digit.png");
+            }
+            @for $i from 0 through 9 {
+                .stat-value-#{$i} { background-position: -(($i + 1) * 13px) 0;}
+            }
+        }
+
+        #face {
+            width: 26px;
+            height: 26px;
+            background-image: url("img/button.png");
+            background-position: -26px 0;
+            .fox {
+                background-image : url("img/foxes.png");
+                width: 17px;
+                height: 17px;
+                margin: 4px;
+            }
+            .face-shock {
+                background-position: -17px 0;
+            }
+            .face-dead {
+                background-position: -34px 0;
+            }
+            .face-cool {
+                background-position: -51px 0;
+            }
+        }
+        #face:active {
+            background-position: 0 0;
+            .fox {
+                margin: 5px;
+            }
+        }
+    }
+    #minefield {
+        @include border;
+        border-width: 3px;
+        flex-shrink: 0;
+
+        background-image: url("img/square.png");
+        background-repeat: repeat;
+
+    }
+}

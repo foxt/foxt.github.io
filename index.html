@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&family=JetBrains+Mono:ital,wght@0,400;0,700;1,300;1,700&display=swap" rel="stylesheet"> 
+    <title>foxtShell 1.0</title>
+</head>
+<body>
+    <div id="pageContainer">
+        <div id="background"></div>
+        <div id="mainWindow" class="window">
+            <div id="windowTitlebar">
+                <div id="windowTitle">
+                    <p id="windowTitleText">/bin/sh</p>
+                </div>
+            </div>
+            <div id="windowContent">
+                <div id="terminal">
+                    <div id="history">
+                        <div id="banner">
+                            <img src="img/logo.svg">
+                            <p id="bannerContent">
+                                foxtShell 1.0<br>
+                                <a href="mailto:contact@foxt.dev" target="_blank"><i class="fas fa-envelope"></i>contact@foxt.dev</a>
+                                &bull;
+                                <a href="https://github.com/foxt" target="_blank"><i class="fab fa-github"></i>@foxt</a>
+                                &bull;
+                                <a href="https://t.me/foxtdev" target="_blank"><i class="fab fa-telegram"></i>@foxtdev</a>
+                                &bull;
+                                <a href="https://keybase.io/foxtdev" target="_blank"><i class="fab fa-keybase"></i>@foxtdev</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div id="inputContainer" style="display:none;">
+                        <p id="prompt">foxt@foxt.dev ~ % </p> <input type="text" id="input" autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="foxsweeper" class="window" style="display: none;">
+            <div id="windowTitlebar">
+                <div id="windowTitle">
+                    <p id="windowTitleText">Foxsweeper</p>
+                </div>
+                <div id="windowControls">
+                    <button class="windowControl" id="closeButton" onclick="document.getElementById('foxsweeper').style.display = 'none'">
+                        x
+                    </button>
+                </div>
+            </div>
+            <iframe width="162" height="205" src="./app/foxmine/" id="windowContent">
+            </iframe>
+        </div>
+        <div id="footer">
+            &copy; 2022 foxtdev | <a target="_blank" href="https://unsplash.com/photos/SPvJPDXEmqA">image credit</a>
+        </div>
+    </div>
+    <script type="module" src="shell.js"></script>
+</body>
+</html>

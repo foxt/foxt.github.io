@@ -1,0 +1,7 @@
+Unless otherwise specified, the base application does not connect any data.
+
+For web sites, data such as your location & browser information may be collected for analytical purposes by Cloudflare, please see the Cloudflare privacy policy at https://www.cloudflare.com/en-gb/privacypolicy/
+
+foxtden services such as foxtMedia or foxtCloud may collect more data, such as usernames, app usage, IP addresses and browser information.
+
+If you choose to connect to or use 3rd party services, you should refer to their privacy policy.
